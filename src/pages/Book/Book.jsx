@@ -6,9 +6,9 @@ import { Link, useParams } from 'react-router-dom'
 import { data } from '../../lib/writerData'
 function Book() {
     const {slug} = useParams()
-    const bookInfo = book.find((item)=> item.id == slug)
-    const bookfilter = book.filter((item)=> item.category == bookInfo.category)
-    const autorInfo = data.find((item)=> (bookInfo.writerId == item.id))
+    const bookInfo = book.find((item)=> item.id === slug*1)
+    const bookfilter = book.filter((item)=> item.category === bookInfo.category)
+    const autorInfo = data.find((item)=> (bookInfo.writerId === item.id))
   return (
     <div className='book'>
         <div className="book__inner container">

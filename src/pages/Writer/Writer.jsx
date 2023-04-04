@@ -5,8 +5,8 @@ import './Writer.scss'
 import { book } from '../../lib/bookData'
 function Writer() {
     const {slug}= useParams()
-    const fillData = data.find((item)=> item.id == slug)
-    const fillBook = book.filter((item)=> item.writerId == slug)
+    const fillData = data.find((item)=> item.id === slug*1)
+    const fillBook = book.filter((item)=> item.writerId === slug*1)
   return (
     <div className='autor'>
        <div className="autor__inner">

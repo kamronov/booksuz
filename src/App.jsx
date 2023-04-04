@@ -11,9 +11,7 @@ function App() {
    let location = useLocation()
    let navigation = useNavigate()
    useEffect(()=>{
-    
-    if(window.localStorage.getItem('key') == 'qwertyuiop'){
-      
+    if(window.localStorage.getItem('key') === 'qwertyuiop'){
     }else{
       navigation('/login')
     }
