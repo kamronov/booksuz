@@ -1,5 +1,5 @@
 import React from 'react'
-import { Link, useNavigate } from 'react-router-dom'
+import { Link,  } from 'react-router-dom'
 import './Login.scss'
 import loginImg from '../../assets/img/login-banner.svg'
 let obj ={
@@ -9,12 +9,12 @@ let obj ={
 
 let key = 'qwertyuiop'
 function Login() {
-    const navigate = useNavigate();
+    // const navigate = useNavigate();
     const loginChecking =(e)=>{
         e.preventDefault()
         
-        if(obj.userName == e.target.usermail.value && obj.password == e.target.password.value){
-            navigate('/')
+        if(obj.userName === e.target.usermail.value && obj.password === e.target.password.value){
+            // navigate('/')
             window.localStorage.setItem('key', key)
         }else {
             alert('hato user yoki parol')

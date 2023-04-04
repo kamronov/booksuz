@@ -1,4 +1,4 @@
-import { Route, Routes, useLocation, useNavigate } from 'react-router-dom';
+import { Route, Routes, useLocation,  } from 'react-router-dom';
 import Login from './pages/Login/Login'
 import './App.scss';
 import Home from './pages/Home/Home';
@@ -9,11 +9,11 @@ import Book from './pages/Book/Book';
 import Header from './components/Header/Header';
 function App() {
    let location = useLocation()
-   let navigation = useNavigate()
+  //  let navigation = useNavigate()
    useEffect(()=>{
     if(window.localStorage.getItem('key') === 'qwertyuiop'){
     }else{
-      navigation('/login')
+      // navigation('/login')
     }
   },[location.pathname])
   return (
