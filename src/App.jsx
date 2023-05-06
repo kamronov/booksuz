@@ -14,7 +14,7 @@ import { Context } from './components/Context/Context';
 function App() {
    let {pathname} = useLocation()
    let navigation = useNavigate()
-   const {id, setId} = useContext(Context);
+   const {id} = useContext(Context);
    useEffect(()=>{
     if(!window.localStorage.getItem('token', '123')){
       navigation('/login/signup')
