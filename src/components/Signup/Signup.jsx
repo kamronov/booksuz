@@ -1,8 +1,34 @@
 import React from 'react'
-import { Link } from 'react-router-dom'
+import { Link, useNavigate } from 'react-router-dom'
 import signUp from '../../assets/img/signUp-banner.svg' 
 import './Signup.scss'
+
 function Signup() {
+  const navigate = useNavigate()
+
+  const register =(e)=>{
+    e.preventDefault()
+    const newUser ={
+          firstName: e.target.firstName.value,
+          lastName: e.target.lastName.value,
+          phone: e.target.phone.value,
+          email: e.target.email.value,
+          password: e.target.password.value,
+    }
+    fetch('https://63df32c43d94d02c0bb5c567.mockapi.io/posts',{
+          method: 'POST',
+          headers: {'Content-type':'application/json'},
+          body:JSON.stringify(newUser)
+    })
+    .then((res)=>{
+      res.json()
+      if(res.status){
+        navigate('/')
+        window.localStorage.setItem('token','123')
+      }
+    })
+    .then((data)=>(data))
+  }
   return (
    <div className='signUp'>
      <div className='signUp__inner container'>
@@ -12,8 +38,8 @@ function Signup() {
             <h2>Sign up</h2>
             <p>Already have an account? <Link to='/login'>Sign in</Link></p>
           </div>
-          <form className='formUp' action="#">
-            <input type="text" name='firstName'  placeholder='First name'/>
+          <form onSubmit={register} className='formUp' action="#">
+            <input type="text" name='firstName'  placeholder='First name' autoFocus/>
             <input type="text" name='lastName'placeholder='Last name' />
             <input type="text" name='phone' placeholder='Phone'/>
             <input type="text" name='email' placeholder='Email' />

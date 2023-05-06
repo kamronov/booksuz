@@ -1,5 +1,10 @@
 .signUp{
     background-color: #E5E5E5;
+    position: absolute;
+    top: 0;
+    left: 0;
+    width: 100vw;
+    height: 100vh;
 }
 .signUp__inner {
     padding: 0;
@@ -35,7 +40,6 @@
                 outline: none;
                 font-size: 14px;
                 line-height: 16px;
-                // color: #AAAAAA;
             }
             .signUp__btn {
                 border: 1px solid #152540;

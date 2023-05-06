@@ -25,7 +25,7 @@ header {
     height: 45px;
     border-radius: 50%;
     border: none;
-    background-color: #8f968f;
+    // background-color: #8f968f;
 }
 .header__item {
     position: relative;
@@ -49,4 +49,8 @@ header {
         width: 100%;
         border-radius: 8px;
     }
+}
+.avatar {
+    color: #fff;
+    text-transform: capitalize;
 }
